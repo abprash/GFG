@@ -1,4 +1,4 @@
-package com.gfg.www;
+package main.java.group.GFG;
 
 public class MinimumDistanceToASortedArray {
 	public static void main(String[] args){

@@ -1,4 +1,4 @@
-package com.gfg.www;
+package main.java.group.GFG;
 
 //finding the ceiling and floor of an element in an array
 public class CeilAndFloorOfAnElementInArray {

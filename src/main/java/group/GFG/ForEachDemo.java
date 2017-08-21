@@ -1,4 +1,4 @@
-package com.gfg.www;
+package main.java.group.GFG;
 
 import java.util.ArrayList;
 import java.util.Arrays;

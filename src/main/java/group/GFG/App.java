@@ -1,4 +1,4 @@
-package group.GFG;
+package main.java.group.GFG;
 
 /**
  * Hello world!
