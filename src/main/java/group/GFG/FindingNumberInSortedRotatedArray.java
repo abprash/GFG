@@ -1,11 +1,17 @@
 package main.java.group.GFG;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class FindingNumberInSortedRotatedArray {
 	
 	public static void main(String[] args){
 		//do an improvised binary search
 		int[] arr = {3,4,5,6,7,8,1,2};
 		System.out.println(arr[findElementInSRArray(arr,0,arr.length-1,2)]);
+		List<Integer> subList = new ArrayList<>();
+		subList = Collections.reverse(subList);
 	}
 	
 	public static int findElementInSRArray(int[] arr,int low, int high, int target){
