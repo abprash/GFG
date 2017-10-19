@@ -51,5 +51,4 @@ public class MatchingPair {
 		System.out.println(findMatchingPairs(t2));
 		System.out.println(findMatchingPairs(t3));
 	}
-
 }
