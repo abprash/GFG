@@ -87,6 +87,6 @@ public class Outer extends Thread
         Outer.Inner inner = outer.new Inner();
         System.out.printf("%d", outer.getData());
         inner.main(args);
-        
+        outer.not
     }
 }
