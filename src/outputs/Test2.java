@@ -3,7 +3,7 @@ package outputs;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-class Test2 
+private class Test2 
 {
     // static block
     static

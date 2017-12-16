@@ -1,5 +1,8 @@
 package outputs;
 
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+
 /*public class Test
 {
     private int data = 5;
@@ -109,13 +112,13 @@ public class Test
         obj.myMethod();
     }
 }*/
-class myThread implements Runnable
+/*class myThread implements Runnable
 {
     public void run()
     {
         Test.obj.notify();
     }
-}
+}*/
  
 /*public class Test implements Runnable
 {
@@ -172,7 +175,7 @@ class myThread implements Runnable
     }
 }  */
 
-class Derived1 
+/*class Derived1 
 {
     public void getDetails()
     {
@@ -198,6 +201,91 @@ public class Test extends Derived2
     public static void main(String[] args)
     {
         Derived1 obj = new Test();
+        obj.getDetails();
+    }
+}*/
+/*public class Test extends Thread implements Runnable
+{
+    public void run()
+    {
+        System.out.printf("GFG ");
+    }
+    public static void main(String[] args) throws InterruptedException
+    {
+        Test obj = new Test();
+        obj.run();
+        obj.start();
+    }
+}*/
+class Test2 implements Runnable
+{
+    public static CyclicBarrier barrier = new CyclicBarrier(3);
+    public void run()
+    {
+        System.out.printf(" GFG ");
+        try
+        {
+            barrier.await();
+        } catch (InterruptedException | BrokenBarrierException e) 
+        {
+            e.printStackTrace();
+        }
+    }
+    public static void main(String[] args) throws InterruptedException
+    {
+        Thread thread1 = new Thread(new Test2());
+        Thread thread2 = new Thread(new Test2());
+         
+        thread1.start();
+        thread2.start();
+        System.out.printf(" GeeksforGeeks ");
+        try
+        {
+            barrier.await();
+        } catch (InterruptedException | BrokenBarrierException e) 
+        {
+            e.printStackTrace();
+        }
+        System.out.printf(" End ");
+         
+    }
+}
+
+//**********************
+
+class Test3
+{
+	public static float sum = 21;
+    private static float temp()
+    {
+        
+        return(--(sum));
+    }
+    public static void main(String[] args)
+    {
+        Test3 test = new Test3();
+        System.out.println(test.temp());
+    }
+}
+
+class Derived 
+{
+    public void getDetails()
+    {
+        System.out.printf("Derived class ");
+    }
+}
+ 
+public class Test extends Derived
+{
+    public void getDetails()
+    {
+        System.out.printf("Test class ");
+        super.getDetails();
+    }
+    public static void main(String[] args)
+    {
+        Derived obj = new Test();
         obj.getDetails();
     }
 }
